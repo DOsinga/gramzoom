@@ -1,0 +1,51 @@
+<script type="text/markdown" id="info">
+name: Gram Zoom
+description: >
+  Gramzoom uses the key element of the Style Tranfer Algorithm to create an infinitely zoomable movie from any image. It works best with images that are self similar, but anything will really do. Can cats look evil? It might just break the Internet.
+type: ai
+github: gramzoom
+</script>
+
+<link rel="stylesheet" href="{{ static }}jquery.youtubecarousel.css" type="text/css">
+
+
+
+<div id="yt_container" class="media-container"></div>
+<script type="text/javascript" src="{{ static }}jquery.youtubecarousel.js"></script>
+
+<article>
+<p>Here are five examples.
+    </p>
+<ol>
+    <li>- The first one is based on a set of kittens. Ask an AI to generate cat videos and it
+will, but they won't be funny. </li>
+    <li>- The second one is based on typewriters and shows what happens on non self
+similar images.</li>
+    <li>- The third one is based on leaves found in Central Park, which happen to work reasonbly
+well.</li>
+    <li>- The next one is based on the skyline of New York from 50 years ago. It does reproduce something
+New York-y somehow.</li>
+    <li>- The last one is a piece of carpet and some people find it weirdly appealing, other people think it
+is disgusting.</li>
+</ol>
+
+    <h2>How does this work?</h2>
+    <p>
+    The basic idea here is to use the trick used in
+    <a href="https://medium.com/data-science-group-iitr/artistic-style-transfer-with-convolutional-neural-network-7ce2476039fd">
+        Style Transfer
+    </a> to transfer the style from one image to another to extract just the style instead. We can then apply that
+        style to an image that just contains noise and after a number of optimization steps, we'll end up with a picture
+        that has the style of the original, but not the content. Just the eyes and hairs of the cats, but no real cats.
+    </p>
+    <p>
+        After transferring the style of some image enough to some noise for it become its own image, we start
+        zooming in. This allows the algorithm to have an effect on the overall picture, plus it will find tiny
+        details that can be zoomed to become structural elements. This works for all pictures, but especially well
+        for something that is self similar.
+    </p>
+
+    <p>
+        The code is available on <a href="https://github.com/DOsinga/gramzoom">github</a>.
+    </p>
+</article>
